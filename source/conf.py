@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'note_linux_bsp'
+project = 'note_linux_package'
 copyright = '2022, http://120.48.82.24/'
 author = '子午'
 

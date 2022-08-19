@@ -5,3 +5,4 @@
    :maxdepth: 1
 
    lrzsz.md
+   i2c-tools
