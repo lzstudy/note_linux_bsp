@@ -6,3 +6,4 @@
 
    lrzsz.md
    i2c-tools
+   openwrt
