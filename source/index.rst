@@ -10,5 +10,7 @@ Linux BSP笔记
    :maxdepth: 3
    :titlesonly:
 
+   debug/index
+   perf/index
    misc/index
 

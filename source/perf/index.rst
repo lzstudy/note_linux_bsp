@@ -1,8 +1,7 @@
-百草园
+性能分析
 ========================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
-   lrzsz.md
-   openwrt
+   perf/index

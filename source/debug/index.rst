@@ -1,8 +1,7 @@
-百草园
+调试工具
 ========================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
-   lrzsz.md
-   openwrt
+   i2c-tools
