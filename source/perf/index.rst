@@ -5,3 +5,4 @@
    :maxdepth: 3
 
    perf/index
+   top/index

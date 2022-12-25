@@ -12,13 +12,15 @@ openswan移植需要两部分内容, libgmp和openswan
 2. 移植libgmp
 ---------------
 
-2.1 下载源码包
+2.1 下载源码
 ***************
 
 ======== =================================
 官网下载  https://gmplib.org/download/gmp/
-本地下载
+本地下载  gmp-6.2.1.tar.bz2_
 ======== =================================
+
+.. _gmp-6.2.1.tar.bz2: http://120.48.82.24:9100/note_linux_bsp/gmp-6.2.1.tar.bz2
 
 2.2 配置源码
 *************
@@ -55,7 +57,7 @@ openswan移植需要两部分内容, libgmp和openswan
 2. 移植openswan
 ---------------
 
-2.1 下载源码包
+2.1 下载源码
 ***************
 
 ======== =================================================
@@ -89,3 +91,58 @@ openswan移植需要两部分内容, libgmp和openswan
     # 3 安装
     make install
 
+3 移植xl2tpd的依赖库libpcap-1.8.1
+------------------------------------
+
+3.1 下载源码
+***************
+
+======== ======================================================================
+官网下载  https://www.linuxfromscratch.org/blfs/view/svn/basicnet/libpcap.html
+本地下载  libpcap-1.10.1.tar.gz_
+======== ======================================================================
+
+.. _libpcap-1.10.1.tar.gz: http://120.48.82.24:9100/note_linux_bsp/libpcap-1.10.1.tar.gz
+
+
+3.2 编译源码
+***************
+
+.. code-block:: c
+
+    # 1 配置
+    ./configure --host=mips --with-pcap=linux --prefix=$PWD/_install CC=mipsel-openwrt-linux-gcc
+
+    # 2 编译
+    make && make install
+
+4 移植xl2tpd
+-------------
+
+4.1 下载源码
+***************
+
+======== ======================================================================
+官网下载  
+本地下载  xl2tpd-1.3.0.tar.gz
+======== ======================================================================
+
+.. _xl2tpd-1.3.0.tar.gz: http://120.48.82.24:9100/note_linux_bsp/xl2tpd-1.3.0.tar.gz
+
+4.2 配置源码
+***************
+
+.. code-block:: c
+
+    # 在pfc下添加如下内容, 另外bsd/signal.h可能会报错, 需要手动屏蔽掉
+
+    pfc:
+        $(CC) $(LDFLAGS) -o pfc -L /home/zw/zdlz/ipsec/libpcap-1.10.1/_install/lib pfc.o -lpcap $(LDLIBS)
+
+4.3 编译源码
+**************
+
+    .. code-block:: c
+
+        make CC=mipsel-openwrt-linux-gcc KERNELSRC=/home/zw/zdlz/ipsec/libpcap-1.10.1/_install LIBSRC=/home/zw/zdlz/ipsec/libpcap-1.10.1/_install/lib
+    
