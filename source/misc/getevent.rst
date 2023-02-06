@@ -66,9 +66,9 @@ getevent
    /dev/input/event10: 0001 0010 00000000
    /dev/input/event10: 0001 0010 00000001
    /dev/input/event10: 0000 0000 00000000
-   /dev/input/event10: 0001 0010 00000000
-   /dev/input/event10: 0001 0010 00000001
-   /dev/input/event10: 0000 0000 00000000
+   /dev/input/event9: 0001 000f 00000000
+   /dev/input/event9: 0001 000f 00000001
+   /dev/input/event9: 0000 0000 00000000
    /dev/input/event10: 0001 0010 00000000
    /dev/input/event10: 0001 0010 00000001
    /dev/input/event10: 0000 0000 00000000
