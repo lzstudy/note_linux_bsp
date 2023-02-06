@@ -4,8 +4,8 @@ getevent
 1 工具说明
 --------------
 
-getevent可以用于检测所有的input事件, 方便调试. 如果不使用此工具我们只能hexdump /dev/input/eventx
-来一个一个调试, 使用此工具后直接使用getevent命令即可检测所有的事件.
+``getevent`` 可以用于检测所有的 ``input`` 事件, 平时我们使用 ``hexdump /dev/input/eventX``
+来一个一个调试, 使用此工具后直接使用 ``getevent`` 命令即可检测所有的事件.
 
 2 移植说明
 -----------
