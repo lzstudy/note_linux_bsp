@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'note_linux_package'
-copyright = '2022, linux笔记 - BSP'
+copyright = '2022, linux笔记 - PKG'
 author = '子午'
 
 # The full version, including alpha/beta/rc tags

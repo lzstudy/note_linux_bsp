@@ -3,15 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Linux BSP笔记
+Linux PKG笔记
 ==========================================
 
 .. toctree::
    :maxdepth: 3
    :titlesonly:
 
-   debug/index
+   hw/index
    perf/index
-   misc/index
    net/index
+   misc/index
 
