@@ -47,6 +47,11 @@ wifi调试需要两个软件包:
             psk=95a34f64a0873deb9335ec55f8c3990c93b3dfe5089ea4af6d47c11e416b66ca
     }
 
+.. note:: 
+    
+    此过程只有在第一次才需要4.2, 后续只需要执行4.1即可
+
+
 4.2 设置配置文件
 *******************
 
@@ -190,7 +195,45 @@ wifi调试需要两个软件包:
     # 3 设置速率
     $ iwconfig mlan0 rate 54M
 
-5.4 设置DHCP获取IP
+5.5 查看stateion信息
+**************************
+
+.. code-block:: c
+
+    $ iw dev mlan0 station dump
+
+    Station e2:b9:ba:d2:70:77 (on mlan0)
+            rx bytes:       97330
+            rx packets:     1347
+            tx bytes:       20684
+            tx packets:     202
+            tx failed:      0
+            signal:         -50 dBm
+            tx bitrate:     11.0 MBit/s
+            rx bitrate:     72.2 MBit/s MCS 7 short GI
+            DTIM period:    1
+            beacon interval:100
+            short preamble: yes
+            short slot time:yes
+
+
+5.6 查看网卡信息
+**********************
+
+.. code-block:: c
+
+   $ iw mlan0 info
+   Interface mlan0
+            ifindex 3
+            wdev 0x1
+            addr 2c:3b:70:6a:4f:bb
+            type managed
+            wiphy 0
+            channel 5 (2432 MHz), width: 20 MHz, center1: 2432 MHz
+            txpower 24.00 dBm
+
+
+5.7 设置DHCP获取IP
 ***********************
 
 .. code-block:: c
