@@ -6,3 +6,4 @@ PKG - 网络类
 
    curl
    openswan
+   wifi
