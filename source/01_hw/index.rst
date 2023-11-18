@@ -1,7 +1,8 @@
-PKG - 硬件调试
+硬件相关
 ========================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 5
 
-   i2c-tools
+   01_i2c-tools
+   02_minicom

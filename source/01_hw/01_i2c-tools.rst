@@ -40,7 +40,7 @@ i2c-tools-4.2.tar.gz_ i2c-tools-4.2版本
    make USE_STATIC_LIB=1
 
    # 安装
-   make _install
+   make install
 
 
 4 工具使用
@@ -87,6 +87,12 @@ i2ctransfer -f -y <i2c adapter id> w2@<i2c addr> <reg_h> <reg_l> r<val>
    # 读取i2c-2, 设备地址0x1A, 地址0x0001, 3个值
    i2ctransfer -f -y 2 w2@0x1A 0x00 0x01 r3
 
+   # 读取i2c-1, 设备地址0x0E, 地址0x0A, 2个值
+   i2ctransfer -f -y 1 w1@0x0E 0x0A r2
+
+   # 读取寄存器 i2c-1 设备地址0x50, 寄存器0x01的1个值
+   i2cget -y 1 0x50 0x01
+
 4.2.2 写寄存器
 ^^^^^^^^^^^^^^
 
@@ -96,6 +102,12 @@ i2ctransfer -f -y <i2c adapter id> w3@<i2c addr> <reg_h> <reg_l> <val>
 
    # 控制i2c-2, 设备地址0x1A, 寄存器地址0x0001, 写入0x03
    i2ctransfer-f -y 2 w3@0x1A 0x00 0x01 0x03
+
+   # 控制i2c-1, 设备地址0x0e, 寄存器地址0x0A
+   i2ctransfer-f -y 1 w3@0x0E 0x0A 0x03
+
+   # 控制i2c-1, 设备地址0x50, 寄存器0A, 写入0x21
+   i2cset -y 1 0x50 0x0A 0x21
 
 5 其他常用i2c调试命令
 ---------------------
